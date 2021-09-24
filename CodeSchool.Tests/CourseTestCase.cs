@@ -21,5 +21,32 @@ namespace CodeSchool.Tests
             var course = new Course() { Subject = Subject.Art, Teacher = new Teacher() };
             Assert.Empty(course.Exams);
         }
+
+        [Fact]
+        public void TestStudentsCanRegisterDuringEnrollment()
+        {
+            var course = new Course() { Subject = Subject.Art, Teacher = new Teacher() };
+            course.Enroll(new Student());
+            course.Enroll(new Student());
+            Assert.Equal(2, course.GetStudents().Count);
+        }
+        
+        [Fact]
+        public void TestEnrollmentClosedWhenNoSeatsAvailable()
+        {
+            var course = new Course() { Subject = Subject.Art, Teacher = new Teacher(), AvailableSeats = 1};
+            course.Enroll(new Student());
+            course.Enroll(new Student());
+            Assert.Single(course.GetStudents());
+        }
+        
+        [Fact]
+        public void TestEnrollmentClosedManuallyByAdministrator()
+        {
+            var course = new Course() { Subject = Subject.Art, Teacher = new Teacher(), AvailableSeats = 1};
+            course.CloseEnrollment();
+            course.Enroll(new Student());
+            Assert.Empty(course.GetStudents());
+        }
     }
 }
