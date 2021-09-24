@@ -7,7 +7,7 @@ namespace CodeSchool.Core
     public class Course
     {
         public Guid Id = Guid.NewGuid();
-        public Subject Subject;
+        public CourseSubject Subject;
         public int AvailableSeats;
         public Teacher Teacher;
         public List<Exam> Exams = new List<Exam>();

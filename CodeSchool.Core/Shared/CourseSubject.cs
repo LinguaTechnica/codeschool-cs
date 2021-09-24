@@ -1,8 +1,8 @@
 namespace CodeSchool.Core.Shared
 {
-    public enum Subject
+    public enum CourseSubject
     {
-        Calculus,
+        Calculus = 1,
         LinearAlgebra,
         Probability,
         Statistics,
