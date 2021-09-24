@@ -20,6 +20,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CodeSchool.Core\CodeSchool.Core.csproj" />
       <ProjectReference Include="..\CodeSchool\CodeSchool.csproj" />
     </ItemGroup>
 

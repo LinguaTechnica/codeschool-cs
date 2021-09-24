@@ -1,6 +1,6 @@
 using System;
+using CodeSchool.Core;
 using Xunit;
-using CodeSchool.Courses;
 
 namespace CodeSchool.Tests
 {
