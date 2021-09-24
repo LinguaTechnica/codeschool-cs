@@ -8,8 +8,11 @@ namespace CodeSchool.Tests
         [Fact]
         public void TestCreateTeacher()
         {
-            var teacher = new Teacher();
-            Assert.NotNull(teacher);
+            var teacher = new Teacher()
+            {
+                Name = "Willy Wonka", Email = "willy@example.com"
+            };
+            Assert.Equal("Willy Wonka", teacher.Name);
         }
     }
 }
